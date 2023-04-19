@@ -1,12 +1,20 @@
 .text-platzi{
-color: #97c93e !important;
+  color: #97c93e !important;
 }
 #header img{
- width: 50px;
+
+  width: 50px;
 }
+
+#main .carousel-inner img{
+  max-height: 70vh;
+}
+
+
 #footer{
- background-color: #13161c;
+background-color: #13161c;
 }
+
 #footer a{
-  color:white
- }
+  color:  white;
+}
