@@ -197,6 +197,7 @@ WHERE country="brasil";
 
 
 
+
 CREATE TABLE `people` (
   `person _id` int(11) NOT NULL AUTO_INCREMENT,
   `last_name` varchar(255) DEFAULT NULL,
@@ -205,3 +206,29 @@ CREATE TABLE `people` (
   `city` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`person _id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+
+
+INSERT INTO platziblog.people (person_id, last_name, first_name, address, city) 
+VALUES ('1', 'Vásquez', 'Israel', 'Calle Famosa Num 1', 'México'),
+        ('2', 'Hernández', 'Mónica', 'Reforma 222', 'México'),
+        ('3', 'Alanis', 'Edgar', 'Central 1', 'Monterrey');
+
+
+CONSULTA A UNA BASE DE DATOS
+
+-UNA CONSULTA BIEN ECHA SALVA UN NEGOCIO O UNA EMPRESA 
+CLIENTES
+PRODUCTOS
+PROVEDORES
+ CUANDO LAS UNES ATRAVEZ DE CUERIS PUEDES PRESENTAR TENDENCIAS
+ CUERIS
+ SETENCIA SELEC PROM
+ WERE
+ FROM
+ SELECT CITY,COUNT (#) AS TOTAL
+ FROM PEOPLE
+ WHERE active = true
+ GROUP BY city
+ 
