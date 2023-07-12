@@ -14,7 +14,7 @@ Playground: tu primera consulta en bases de datos
 ### Entidades de Platzi Blog
 
 ### Relaciones
-
+   
 ### Múltiples muchos
 
 ### Diagrama ER
@@ -207,28 +207,67 @@ CREATE TABLE `people` (
   PRIMARY KEY (`person _id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 
-
+DDL:DATA DEFINITION LENGUAJE
+DML:DATA MANIPULATION LANGUAJE
+DCL:DATA  CONTROL LENGUAJE
 
 
 INSERT INTO platziblog.people (person_id, last_name, first_name, address, city) 
 VALUES ('1', 'Vásquez', 'Israel', 'Calle Famosa Num 1', 'México'),
         ('2', 'Hernández', 'Mónica', 'Reforma 222', 'México'),
         ('3', 'Alanis', 'Edgar', 'Central 1', 'Monterrey');
+USE :USAR
+CONSULTA A UNA BASE DE DATOS 
+NOMBRE
+SEÑALARLA 
+CREAR TABLA - CREATE
+
+DROP SCHEMA 'platziblog';
+CREATE SCHEMA 'platziblog' DEFAULT CHARACTER SET utf8;
+USE 'platziblog'´,
+CREATE TABLE 'platziblog',´CATEGORIES´(
+  ´ID´ INT NN AUTO_INCREMENT(SE AUTOINCREMENTA SOLO LA BASE DE DATOS)-SOLO PUEDE PONER NUMEROS
+  CONSTRAINTS
+
+USAR COMILLAS GRAVES
+
+´TITULO´´TITULE´ VARCHAR(255),NULL,
+´FECHA_PUBLICACION'DATATIME(UTILIZA NUMEROS) ESTA PRE DETERMINADO    A   M  D H M S 
+                                                                   AAAA MM  D HR M 
+
+TIMESTAMP NULL ,
+DROP SCHEMA 'platziblog';
+CREATE SCHEMA 'platziblog' DEFAULT CHARACTER SET utf8;
+USE 'platziblog',
+CREATE TABLE 'platziblog'
+'id' INT NN AUTO_INCREMENT(
+'titulo' VARCHAR(255),NULL,
+'fecha_publicacion'DATATIME
+'contenido' VARCHAR (300) NULL,
+'status'VARCHAR (400) NULL,
+'usuario_id'int null,
+'categoria_id' int null,
+primary key ('id');
 
 
-CONSULTA A UNA BASE DE DATOS
 
--UNA CONSULTA BIEN ECHA SALVA UN NEGOCIO O UNA EMPRESA 
-CLIENTES
-PRODUCTOS
-PROVEDORES
- CUANDO LAS UNES ATRAVEZ DE CUERIS PUEDES PRESENTAR TENDENCIAS
- CUERIS
- SETENCIA SELEC PROM
- WERE
- FROM
- SELECT CITY,COUNT (#) AS TOTAL
- FROM PEOPLE
- WHERE active = true
- GROUP BY city
- 
+
+SELECT 
+DROP SCHEMA  'platziblog';
+CREATE SCHEMA 'platziblog' DEFAULT CHARACTER SET utf8;
+USE 'platziblog';
+CREATE TABLE 'platziblog'.'categorias'(
+'id' INT AUTO_INCREMENT,
+'titulo' VARCHAR (255) NULL;
+'fecha_publicacion' TIMESTAMP NULL,
+'contenido' VARCHAR (3000) NULL,
+'estatus'VARCHAR (400)NULL,
+'usuario_id' INT NULL,
+'categoria_id' INT NULL,
+PRIMARY KEY ('id'))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
+SELECT FROM WHERE
+SELECT
+FROM post
+WHERE fecha_publicacion>; DONDE COINCIDA
