@@ -250,24 +250,58 @@ CREATE TABLE 'platziblog'
 primary key ('id');
 
 
+COMO BUSCAR EN UNA BASE DE DAtos
+
+CCREATE SCHEMA `platziblog`DEFAULT CHARACTER SET utf8 ;
+USE   `platziblog` ;
+DROP SCHEMA `platziblog`;
+CREATE TABLE `platziblog`.`categorias`(
+`id`  INT NOT NULL AUTO_INCREMENT,
+`titulo` varchar (255) NULL,
+`fecha_publicacion` TIMESTAMP  NULL,
+`contenido` varchar (3000) NULL,
+`estatus` varchar (10) NULL,
+`usuario_id` INT  NULL,
+`categoria_id` INT NULL,
+PRIMARY KEY (`id`))
+
+SELECT titulo AS encabezado,fecha_publicacion AS publicado_en,estatus AS estado
+FROM categorias; 
+SELECT COUNT(*) AS cantidad_registros
+FROM categorias; 
 
 
-SELECT 
-DROP SCHEMA  'platziblog';
-CREATE SCHEMA 'platziblog' DEFAULT CHARACTER SET utf8;
-USE 'platziblog';
-CREATE TABLE 'platziblog'.'categorias'(
-'id' INT AUTO_INCREMENT,
-'titulo' VARCHAR (255) NULL;
-'fecha_publicacion' TIMESTAMP NULL,
-'contenido' VARCHAR (3000) NULL,
-'estatus'VARCHAR (400)NULL,
-'usuario_id' INT NULL,
-'categoria_id' INT NULL,
-PRIMARY KEY ('id'))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
-SELECT FROM WHERE
-SELECT
-FROM post
+
 WHERE fecha_publicacion>; DONDE COINCIDA
+
+
+select titulo,fecha_publicacion,estatus
+from posts;
+A
+SELECT COUNT(*);
+COUNT=CONTAR
+
+
+FROM post;
+
+use:marcar en negrilla .para volverla de forma prederminada
+select
+ count (*)contar todos 
+
+
+
+joins=agrupar
+ejm todo los que este en b no esta en a 
+
+
+from
+indica de donde se traen los datos
+join=juntar o unir tablas 
+medida de conjuntos
+diagramas de ven son circulos que se tocan en un punto 
+
+join= esta en un  lado pero en el otro no 
+join interferencia
+
+join interseccion
+inner join=join interno
