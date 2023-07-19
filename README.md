@@ -252,10 +252,29 @@ primary key ('id');
 
 COMO BUSCAR EN UNA BASE DE DAtos
 
-CCREATE SCHEMA `platziblog`DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA `platziblog`  DEFAULT CHARACTER SET utf8 ;
 USE   `platziblog` ;
-DROP SCHEMA `platziblog`;
 CREATE TABLE `platziblog`.`categorias`(
+`id`  INT NOT NULL AUTO_INCREMENT,
+`nombre_categoria` varchar (255) NULL,
+PRIMARY KEY (`id`));
+
+CREATE TABLE `platziblog`.`usuarios`(
+`id`  INT NOT NULL AUTO_INCREMENT,
+`login` varchar (255) NULL,
+`password` varchar (3000) NULL,
+`nickname` varchar (3000) NULL,
+`email`varchar (100) NULL,
+PRIMARY KEY (`id`));
+
+CREATE TABLE `platziblog`.`etiquetas`(
+`id`  INT NOT NULL AUTO_INCREMENT,
+`nombre_etiqueta` varchar (255) NULL,
+PRIMARY KEY (`id`));
+
+
+
+CREATE TABLE `platziblog`.`posts`(
 `id`  INT NOT NULL AUTO_INCREMENT,
 `titulo` varchar (255) NULL,
 `fecha_publicacion` TIMESTAMP  NULL,
@@ -263,7 +282,27 @@ CREATE TABLE `platziblog`.`categorias`(
 `estatus` varchar (10) NULL,
 `usuario_id` INT  NULL,
 `categoria_id` INT NULL,
-PRIMARY KEY (`id`))
+PRIMARY KEY (`id`));
+
+CREATE TABLE `platziblog`.`posts_etiquetas`(
+`id`  INT NOT NULL AUTO_INCREMENT,
+`post_id` varchar (255) NULL,
+`etiqueta_id` varchar (3000) NULL,
+PRIMARY KEY (`id`));
+
+SELECT *
+FROM usuarios
+LEFT JOIN  posts ON usuarios.id=posts.usuario_id
+UNION
+SELECT *
+FROM usuarios
+RIGHT JOIN posts ON usuarios.id=posts.usuario_id;
+
+
+
+
+
+USE `platziblog`;
 
 SELECT titulo AS encabezado,fecha_publicacion AS publicado_en,estatus AS estado
 FROM categorias; 
@@ -296,7 +335,8 @@ ejm todo los que este en b no esta en a
 
 from
 indica de donde se traen los datos
-join=juntar o unir tablas 
+join= agrupar 
+juntar o unir tablas 
 medida de conjuntos
 diagramas de ven son circulos que se tocan en un punto 
 
@@ -305,3 +345,49 @@ join interferencia
 
 join interseccion
 inner join=join interno
+
+
+
+utilizando la sentencia from
+
+-- Estructura basica de un query
+SELECT	*
+FROM		posts;
+
+-- Estructura extendida de un query
+SELECT	*
+FROM		posts
+WHERE	fecha_publicacion > '2024';
+
+
+SELECT* === traigame todo lo que este en usuarios
+FROM usuarios
+LEFT JOIN post ON USUARIOS.id = posts.usuario_id;
+post=tiene fecha
+estado
+titulo
+
+
+
+usuarios.id= 
+PRIMARY KEY (`id`))o cedula 
+forem key (`usuarios_id)
+
+SELECT * FROM usuarios LEFT  JOIN post ON usuarios.id = post.usuarios_id
+id o cedula
+
+SELECT *
+FROM usuarios
+RIGHT JOIN  posts ON usuarios.id=posts.usuario_id;
+
+
+
+
+tabla=post
+ POST:CAMPO
+RIGHTse encarga de devolver una serie de resultados que integran todos los registros que se comparten entre dos tablas
+WHERE:se usa para restringir el número de filas afectadas por una consulta SELECT, UPDATE o DELETE.
+ WHERE posts.usuario_id IS NULL;
+
+
+where
