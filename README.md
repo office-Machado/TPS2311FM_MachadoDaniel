@@ -391,3 +391,6 @@ WHERE:se usa para restringir el número de filas afectadas por una consulta SELE
 
 
 where
+
+
+
