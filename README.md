@@ -390,7 +390,174 @@ WHERE:se usa para restringir el número de filas afectadas por una consulta SELE
  WHERE posts.usuario_id IS NULL;
 
 
-where
+where=FILTRADO
+
+left join tabla de lado izquierdo es usuarios
+read join  
+union:es unirlo con otra cosa
+on sirve para =
+agrega mas "registros"
+on sirve para=
+
+
+where=filtra que datos queremos por criterios como una fecha,una cantidad
 
 
 
+
+SELECT *
+FROM posts
+WHERE id<50;
+
+
+SELECT *
+FROM posts
+WHERE  fecha_publicacion BETWEEN '2023-01-01' AND '2025-12-31' ;
+
+
+
+
+SELECT *
+FROM posts
+WHERE  id BETWEEN 50 AND 60 ;
+
+
+
+
+SELECT *
+FROM posts
+WHERE  MONTH(fecha_publicacion)='04';
+
+NULL= donde el campo sea nulo
+
+
+
+
+SELECT *
+FROM posts
+WHERE  usuario_id IS NULL;
+
+
+
+
+
+SELECT *
+FROM posts
+WHERE  usuario_id IS  NOT NULL;
+
+
+
+
+SELECT *
+FROM posts
+WHERE  usuario_id IS  NOT NULL   AND estatus='activo';
+
+
+
+SELECT *
+FROM posts
+WHERE  usuario_id IS  NOT NULL   AND estatus='activo' AND id<50;
+
+
+
+SELECT *
+FROM posts
+WHERE  usuario_id IS  NOT NULL   AND estatus='activo' AND id<50 AND categoria_id=2 AND YEAR(fecha_publicacion)='2025'  ;
+
+
+
+good bay: agrupacion
+select se relaciona con los campos
+
+SELECT estatus,COUNT(*)post_quantity
+FROM posts
+GROUP BY estatus
+sirve para consultas especiales
+
+
+SELECT YEAR(fecha_publicacion)AS post_year,count(*) AS post_quantity
+FROM posts
+GROUP BY post_year;
+
+
+
+SELECT MONTHNAME(fecha_publicacion)AS post_month,count(*) AS post_quantity
+FROM posts
+GROUP BY post_month;
+
+
+
+SELECT estatus,MONTHNAME(fecha_publicacion)AS post_month,count(*) AS post_quantity
+FROM posts
+GROUP BY estatus,post_month;
+
+AS=sirve para los apodos o un sobrenombre
+
+senterncia over bay=ordena los datos o un criterio un campo
+
+
+
+SELECT *
+FROM    posts
+ORDER BY fecha_publicacion ASC;
+
+
+
+
+SELECT *
+FROM    posts
+ORDER BY fecha_publicacion DESC;
+
+
+
+SELECT *
+FROM    posts
+ORDER BY usuario_id ASC;
+
+
+SELECT *
+FROM    posts
+ORDER BY usuario_id DESC;
+
+
+
+SELECT *
+FROM    posts
+ORDER BY fecha_publicacion ASC
+LIMIT 5;
+
+
+HAVING
+
+SELECT MONTHNAME(fecha_publicacion)AS post_month,estatus,count(*)AS post_quantity
+FROM posts
+GROUP BY estatus,post_month
+HAVING post_quantity>1
+ORDER  BY post_month;
+
+CREATE SCHEMA `cursos`  DEFAULT CHARACTER SET utf8 ;
+USE   `cursos` ;
+CREATE TABLE `cursos`.`categorias`(
+`id`  INT NOT NULL AUTO_INCREMENT,
+`name` varchar (255) NULL,
+`n_reviews` varchar (2000) NULL,
+PRIMARY KEY (`id`));
+
+SELECT * FROM cursos.categorias;
+INSERT INTO `cursos`.`categorias` (`id`,`name`,`n_reviews`) VALUES (100,'fundamentos de sql y bases de datos',11);
+INSERT INTO `cursos`.`categorias` (`id`,`name`,`n_reviews`) VALUES (200,'cursos de MySQL y MariaBD', 344);
+INSERT INTO `cursos`.`categorias` (`id`,`name`,`n_reviews`) VALUES (260,'curso de Data science',88);
+INSERT INTO `cursos`.`categorias` (`id`,`name`,`n_reviews`) VALUES (350,'curso de firebase', 0);
+INSERT INTO `cursos`.`categorias` (`id`,`name`,`n_reviews`) VALUES (749,'curso de python', 300);
+INSERT INTO `cursos`.`categorias` (`id`,`name`,`n_reviews`) VALUES (750,'curso de React.js', 0);
+USE   `categorias` ;
+
+
+SELECT *
+FROM `categorias`
+where`n_reviews` BETWEEN 1 AND 100 ;
+
+
+SELECT *
+from `categorias`
+where `name` LIKE '%SQL%';
