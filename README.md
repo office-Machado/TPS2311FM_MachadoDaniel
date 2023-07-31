@@ -561,3 +561,46 @@ where`n_reviews` BETWEEN 1 AND 100 ;
 SELECT *
 from `categorias`
 where `name` LIKE '%SQL%';
+
+
+GROUP BY
+ayuda a ahrupar de manera funcional los datos
+posts quantity
+as=sirve para renombrar
+
+SELECT estatus,SUM(id)suma_id
+FROM posts
+GROUP BY estatus;
+
+
+
+SELECT year(fecha_publicacion) AS post_year,COUNT(*) AS post_quantity
+FROM posts
+GROUP BY post_year;
+
+
+SELECT estatus,MONTHNAME(fecha_publicacion) AS post_month,COUNT(*) AS post_quantity
+FROM posts
+GROUP BY estatus,post_month;
+
+
+SELECT *
+FROM posts
+ORDER BY fecha_publicacion ASC; ascendente
+
+
+SELECT MONTHNAME (fecha_publicacion)AS post_month,estatus,COUNT(*) AS post_quantity
+FROM posts
+GROUP BY estatus,post_month
+HAVING post_quantity >1
+ORDER BY post_month
+
+
+SELECT MONTHNAME (fecha_publicacion)AS post_month,estatus,COUNT(*) AS post_quantity
+FROM posts
+GROUP BY estatus,post_month
+HAVING post_quantity >1
+ORDER BY post_month
+
+having usar para filtrar pero no funciona con el where
+
