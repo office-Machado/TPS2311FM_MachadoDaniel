@@ -604,3 +604,4 @@ ORDER BY post_month
 
 having usar para filtrar pero no funciona con el where
 
+ ..0
