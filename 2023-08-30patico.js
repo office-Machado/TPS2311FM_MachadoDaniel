@@ -10,3 +10,8 @@ h1.innerText = 'Patito <br> Feo';
 //h1.setAttribute('class','rojo');     
 
 h1.classList.add('rojo');
+h1.classList.remove('verde');
+//h1.classList.toggle('verde');
+//h1.classList.contains('verde');
+
+input.value= '456'
