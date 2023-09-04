@@ -6,3 +6,5 @@ input=document.querySelector('input');console.log(input.value);console.log({h1,p
 
 h1.innerHTML = 'Patito <br> Feo';
 h1.innerText = 'Patito <br> Feo';
+console.log(h1.getAttribute('class'));
+h1.setAttribute
