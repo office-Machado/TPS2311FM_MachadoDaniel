@@ -8,8 +8,6 @@ app.use(express.urlencoded({extended:true}));
 app.get('/:name/:id',(req,res)=>{
     const {name,id}=req.params;
 
-
-
     res.send('${name}:${id}');
 });
 
