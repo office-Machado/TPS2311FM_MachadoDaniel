@@ -7,4 +7,4 @@ const database = myql2.createConnection({
     database:'tutorial',
 });  
 
-module.exports:database;
+module.exports:database 
