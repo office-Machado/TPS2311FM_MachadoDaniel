@@ -9,5 +9,5 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true})); 
 
 //endpoints
-app,use('/user')
+app,use('/user',userRoutes);
 module.exports=app;
