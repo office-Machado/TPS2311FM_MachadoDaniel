@@ -1,5 +1,7 @@
 const{Router}=require('express');
 
+const{createUser} = require('./')
+
 const router =Router();
 
 
